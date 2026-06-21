@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.ehpk
+
+# machine-specific helper scripts and logs (not part of the project)
+*.bat
+_status.txt
+*.log

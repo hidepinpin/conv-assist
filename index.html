@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.openai.com wss://api.openai.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'" />
+  <title>Conv Assist EN→JA</title>
+  <style>
+    /* Even Hub apps must avoid CSS frameworks needing build plugins — plain CSS only */
+    body { font-family: -apple-system, sans-serif; margin: 0; padding: 16px; background: #111; color: #eee; }
+    h1 { font-size: 18px; }
+    label { display: block; margin: 12px 0 4px; font-size: 13px; color: #aaa; }
+    input { width: 100%; box-sizing: border-box; padding: 10px; border-radius: 8px; border: 1px solid #444; background: #1d1d1d; color: #eee; font-size: 14px; }
+    button { margin-top: 12px; padding: 10px 16px; border-radius: 8px; border: none; background: #2e7d32; color: #fff; font-size: 14px; }
+    .row { margin-top: 16px; padding: 12px; background: #1a1a1a; border-radius: 8px; font-size: 13px; white-space: pre-wrap; }
+    .tag { color: #7fd47f; }
+  </style>
+</head>
+<body>
+  <h1>Conv Assist EN→JA</h1>
+  <p style="font-size:13px;color:#aaa">
+    グラスのマイクで相手の英語を聞き取り、英語原文・日本語訳・返答候補(英語)をグラスに表示します。<br />
+    グラス側操作: <b>タップ</b> = 聞き取り開始/停止
+  </p>
+
+  <label for="apiKey">OpenAI API Key</label>
+  <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+  <button id="saveKey">保存</button>
+
+  <div class="row" id="status">status: 初期化中…</div>
+  <div class="row"><span class="tag">EN</span> <span id="en">—</span></div>
+  <div class="row"><span class="tag">JA</span> <span id="ja">—</span></div>
+  <div class="row"><span class="tag">Reply</span> <span id="reply">—</span></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

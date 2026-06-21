@@ -1,0 +1,22 @@
+{
+  "name": "conv-assist",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run verify && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "verify": "npm run verify:manifest && npm run verify:test && npm run verify:security",
+    "verify:manifest": "node scripts/validate-manifest.mjs",
+    "verify:test": "node --test scripts/test-utils.mjs",
+    "verify:security": "node scripts/security-check.mjs"
+  },
+  "dependencies": {
+    "@evenrealities/even_hub_sdk": "^0.0.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vite": "^5.4.0"
+  }
+}
